@@ -13,7 +13,4 @@ class MessagesController < ApplicationController
       render 'new'
     end
   end
-
-  def index
-  end
 end
