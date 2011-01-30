@@ -1,0 +1,20 @@
+<% form_for @message, :url => { :action => "create" }, :html => { :method => :post } do |f| %>
+<div id="formleft" style="width: 100%">
+  <%= f.label "Name" %>
+  <%= f.text_field :sender_name, :size => "13" %><br />
+  <%= f.label "Email" %>
+  <%= f.text_field :email, :size => "13" %><br />
+  <%= f.label "Type" %>
+  <%= f.select :message_type, options_for_select(["Announcement", "Urgent"]) %><br /><br />
+  <%= f.label "Subject" %>
+  <%= f.text_field :subject, :size => "35" %><br />
+  <%= f.label "Message" %>
+  <%= f.text_area :content, :rows => "8", :cols => "40" %><br /><br />
+</div>
+<div id="formright" style="padding-right: 225px">
+  <%= f.label " " %>
+  <%= f.submit "Submit" %>
+  <%= submit_tag("Clear", { :name => "reset", :id => "reset", :type => "reset" }) %>
+</div>
+<div class="clear"></div>
+<% end %>
